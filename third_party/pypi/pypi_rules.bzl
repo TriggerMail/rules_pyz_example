@@ -19,6 +19,11 @@ def pypi_repositories():
         sha256="fc323ffcaeaed0e0a02bf4d117757b98aed530d9ed4531e3e15460124c106691",
     )
     native.http_file(
+        name="pypi_enum34",
+        url="https://pypi.python.org/packages/c5/db/e56e6b4bbac7c4a06de1c50de6fe1ef3810018ae11732a50f15f62c7d050/enum34-1.1.6-py2-none-any.whl",
+        sha256="6bd0f6ad48ec2aa117d3d141940d484deccda84d4fcd884f5c3d93c23ecd8c79",
+    )
+    native.http_file(
         name="pypi_futures",
         url="https://pypi.python.org/packages/2d/99/b2c4e9d5a30f6471e410a146232b4118e697fa3ffc06d6a65efde84debd0/futures-3.2.0-py2-none-any.whl",
         sha256="ec0a6cb848cc212002b9828c3e34c675e0c9ff6741dc445cab6fdd4e1085d1f1",
@@ -57,6 +62,16 @@ def pypi_repositories():
         name="pypi_googleapis_common_protos",
         url="https://storage.googleapis.com/bluecore-bazel/googleapis_common_protos-1.5.3-py2-none-any.whl",
         sha256="688b20bc1a70a6ae3178ee296adb8bb0d04f64e2734c528b302c7024bf2abb7d",
+    )
+    native.http_file(
+        name="pypi_grpcio__linux",
+        url="https://pypi.python.org/packages/9c/9a/4c09b5370c362cef2c4d8bc9c807ecfa0f518c06430e43e8c60cfa7bc39e/grpcio-1.8.4-cp27-cp27mu-manylinux1_x86_64.whl",
+        sha256="8a425fbf0a9a966cd45c49a6657a3db8fc962297d85d8c53795918cba5d981a0",
+    )
+    native.http_file(
+        name="pypi_grpcio__osx",
+        url="https://pypi.python.org/packages/8b/5d/dcaf097fc9b7ab39babf4f9f4055e622f6a59e486a31bbd03c48754c36ef/grpcio-1.8.4-cp27-cp27m-macosx_10_10_intel.whl",
+        sha256="dd1a1a0e20e9708d7724d52dbeaef4a43ac40c4a5d5b791cbb894e7698351f97",
     )
     native.http_file(
         name="pypi_idna",
@@ -135,6 +150,14 @@ def pypi_libraries():
         visibility=["//visibility:public"],
     )
     pyz_library(
+        name="enum34",
+        wheels=["@pypi_enum34//file"],
+        deps=[
+        ],
+        licenses=["notice"],
+        visibility=["//visibility:public"],
+    )
+    pyz_library(
         name="futures",
         wheels=["@pypi_futures//file"],
         deps=[
@@ -154,6 +177,15 @@ def pypi_libraries():
             "setuptools",
             "six",
             "futures",
+        ],
+        licenses=["notice"],
+        visibility=["//visibility:public"],
+    )
+    pyz_library(
+        name="google_api_core__grpc",
+        deps=[
+            ":google_api_core",
+            "grpcio",
         ],
         licenses=["notice"],
         visibility=["//visibility:public"],
@@ -188,6 +220,15 @@ def pypi_libraries():
         wheels=["@pypi_google_cloud_core//file"],
         deps=[
             "google_api_core",
+        ],
+        licenses=["notice"],
+        visibility=["//visibility:public"],
+    )
+    pyz_library(
+        name="google_cloud_core__grpc",
+        deps=[
+            ":google_cloud_core",
+            "grpcio",
         ],
         licenses=["notice"],
         visibility=["//visibility:public"],
@@ -228,6 +269,30 @@ def pypi_libraries():
         wheels=["@pypi_googleapis_common_protos//file"],
         deps=[
             "protobuf",
+        ],
+        licenses=["notice"],
+        visibility=["//visibility:public"],
+    )
+    pyz_library(
+        name="googleapis_common_protos__grpc",
+        deps=[
+            ":googleapis_common_protos",
+            "grpcio",
+        ],
+        licenses=["notice"],
+        visibility=["//visibility:public"],
+    )
+    pyz_library(
+        name="grpcio",
+        wheels=select({
+                "@com_bluecore_rules_pyz//rules_python_zip:linux": ["@pypi_grpcio__linux//file"],
+                "@com_bluecore_rules_pyz//rules_python_zip:osx": ["@pypi_grpcio__osx//file"],
+        }),
+        deps=[
+            "enum34",
+            "futures",
+            "protobuf",
+            "six",
         ],
         licenses=["notice"],
         visibility=["//visibility:public"],
