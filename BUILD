@@ -37,3 +37,8 @@ pyz_binary(
         "//third_party/pypi:grpcio",
     ],
 )
+
+pyz_test(
+    name = "example_test",
+    srcs = ["example_test.py"],
+)
