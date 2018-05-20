@@ -1,128 +1,11 @@
-# AUTO GENERATED DO NOT EDIT
-# Command line: pyrules/pip_generate -requirements requirements.txt -output third_party/pypi/pypi_rules.bzl -wheelURLPrefix http://example.com/
+# AUTO GENERATED. DO NOT EDIT DIRECTLY.
+#
+# Command line:
+#   pypi/pip_generate \
+#     -wheelToolPath /Users/loaner/rules_pyz/pypi/wheeltool.py -requirements=requirements.txt -outputDir=third_party/pypi -wheelDir=wheels -outputBzlFileName=pypi_rules.bzl.new -wheelURLPrefix=https://storage.googleapis.com/bluecore-bazel/
+
 load("@com_bluecore_rules_pyz//rules_python_zip:rules_python_zip.bzl", "pyz_library")
 
-def pypi_repositories():
-    native.http_file(
-        name="pypi_cachetools",
-        url="https://pypi.python.org/packages/ac/e8/5492fd5ada0b05a1bc485bcb634b559acdec59383eef5c4203b5e22be296/cachetools-2.0.1-py2.py3-none-any.whl",
-        sha256="4319bbb78172e7bcf99423e1ecd6914b32336ccfe97d2058ffe62e641a7f3abe",
-    )
-    native.http_file(
-        name="pypi_certifi",
-        url="https://pypi.python.org/packages/fa/53/0a5562e2b96749e99a3d55d8c7df91c9e4d8c39a9da1f1a49ac9e4f4b39f/certifi-2018.1.18-py2.py3-none-any.whl",
-        sha256="14131608ad2fd56836d33a71ee60fa1c82bc9d2c8d98b7bdbc631fe1b3cd1296",
-    )
-    native.http_file(
-        name="pypi_chardet",
-        url="https://pypi.python.org/packages/bc/a9/01ffebfb562e4274b6487b4bb1ddec7ca55ec7510b22e4c51f14098443b8/chardet-3.0.4-py2.py3-none-any.whl",
-        sha256="fc323ffcaeaed0e0a02bf4d117757b98aed530d9ed4531e3e15460124c106691",
-    )
-    native.http_file(
-        name="pypi_enum34",
-        url="https://pypi.python.org/packages/c5/db/e56e6b4bbac7c4a06de1c50de6fe1ef3810018ae11732a50f15f62c7d050/enum34-1.1.6-py2-none-any.whl",
-        sha256="6bd0f6ad48ec2aa117d3d141940d484deccda84d4fcd884f5c3d93c23ecd8c79",
-    )
-    native.http_file(
-        name="pypi_futures",
-        url="https://pypi.python.org/packages/2d/99/b2c4e9d5a30f6471e410a146232b4118e697fa3ffc06d6a65efde84debd0/futures-3.2.0-py2-none-any.whl",
-        sha256="ec0a6cb848cc212002b9828c3e34c675e0c9ff6741dc445cab6fdd4e1085d1f1",
-    )
-    native.http_file(
-        name="pypi_google_api_core",
-        url="https://pypi.python.org/packages/10/65/6237293db4fbf6f0bcf7c2b67c63e4dc4837c631f194064ae84957cd0313/google_api_core-0.1.4-py2.py3-none-any.whl",
-        sha256="1698e4af4edd2a8ec22d678fd9abe99c926c3a154b2232f32807946ca49e3da1",
-    )
-    native.http_file(
-        name="pypi_google_auth",
-        url="https://pypi.python.org/packages/09/a1/3987d9991d0a101103a9465e8cd2d6c913439141f7a3630d6e0655549352/google_auth-1.3.0-py2.py3-none-any.whl",
-        sha256="5601c86d6fb07e87a3fbc6d1fcdab560c1bdd8c163604ce90ec3245d6c508bb2",
-    )
-    native.http_file(
-        name="pypi_google_cloud_bigquery",
-        url="https://pypi.python.org/packages/11/c0/2268a5cf1f6932658fb0d4d6c2ff41840dd579ca8d47cf37447add37c2b8/google_cloud_bigquery-0.29.0-py2.py3-none-any.whl",
-        sha256="7f9b7dfcf02aa7403e428dc23a2af3aebca80bfcdc0dd4afa5f70b8d5a69bf96",
-    )
-    native.http_file(
-        name="pypi_google_cloud_core",
-        url="https://pypi.python.org/packages/86/f8/6d2bec8b62525e1101802a88e0bde91b92c2f6138dd29fdf386aae4ba06a/google_cloud_core-0.28.0-py2.py3-none-any.whl",
-        sha256="dd746f5ddd4e893c2605f3d569f1ace13c0f10bdac8a8d2e27bc95920d7d0afc",
-    )
-    native.http_file(
-        name="pypi_google_cloud_storage",
-        url="https://pypi.python.org/packages/37/18/b91cf7eeecd4b188297e435a8a570046ab4b39efd054322a7c21df27fa28/google_cloud_storage-1.7.0-py2.py3-none-any.whl",
-        sha256="91a3699544d3b5c351dab0b542d5498fa75fb224df4c9f4353819a57d7debc3d",
-    )
-    native.http_file(
-        name="pypi_google_resumable_media",
-        url="https://pypi.python.org/packages/77/95/2e4020a54366423ddba715f89fb7ca456c8f048b15cada6cd6a54cf10e8c/google_resumable_media-0.3.1-py2.py3-none-any.whl",
-        sha256="116de90b9cd483b17c53618ee6a5a20f33e741c648140c8cc9c2141e07616ff1",
-    )
-    native.http_file(
-        name="pypi_googleapis_common_protos",
-        url="https://storage.googleapis.com/bluecore-bazel/googleapis_common_protos-1.5.3-py2-none-any.whl",
-        sha256="688b20bc1a70a6ae3178ee296adb8bb0d04f64e2734c528b302c7024bf2abb7d",
-    )
-    native.http_file(
-        name="pypi_grpcio__linux",
-        url="https://pypi.python.org/packages/9c/9a/4c09b5370c362cef2c4d8bc9c807ecfa0f518c06430e43e8c60cfa7bc39e/grpcio-1.8.4-cp27-cp27mu-manylinux1_x86_64.whl",
-        sha256="8a425fbf0a9a966cd45c49a6657a3db8fc962297d85d8c53795918cba5d981a0",
-    )
-    native.http_file(
-        name="pypi_grpcio__osx",
-        url="https://pypi.python.org/packages/8b/5d/dcaf097fc9b7ab39babf4f9f4055e622f6a59e486a31bbd03c48754c36ef/grpcio-1.8.4-cp27-cp27m-macosx_10_10_intel.whl",
-        sha256="dd1a1a0e20e9708d7724d52dbeaef4a43ac40c4a5d5b791cbb894e7698351f97",
-    )
-    native.http_file(
-        name="pypi_idna",
-        url="https://pypi.python.org/packages/27/cc/6dd9a3869f15c2edfab863b992838277279ce92663d334df9ecf5106f5c6/idna-2.6-py2.py3-none-any.whl",
-        sha256="8c7309c718f94b3a625cb648ace320157ad16ff131ae0af362c9f21b80ef6ec4",
-    )
-    native.http_file(
-        name="pypi_protobuf",
-        url="https://pypi.python.org/packages/cc/0e/772d90fe31c9a307309f82cf1fd9831f6041623796b07505d30b25a05a4c/protobuf-3.5.1-py2.py3-none-any.whl",
-        sha256="4d2e665410b0a278d2eb2c0a529ca2366bb325eb2ae34e189a826b71fb1b28cd",
-    )
-    native.http_file(
-        name="pypi_pyasn1",
-        url="https://pypi.python.org/packages/ba/fe/02e3e2ee243966b143657fb8bd6bc97595841163b6d8c26820944acaec4d/pyasn1-0.4.2-py2.py3-none-any.whl",
-        sha256="d5cd6ed995dba16fad0c521cfe31cd2d68400b53fcc2bce93326829be73ab6d1",
-    )
-    native.http_file(
-        name="pypi_pyasn1_modules",
-        url="https://pypi.python.org/packages/e9/51/bcd96bf6231d4b2cc5e023c511bee86637ba375c44a6f9d1b4b7ad1ce4b9/pyasn1_modules-0.2.1-py2.py3-none-any.whl",
-        sha256="47fb6757ab78fe966e7c58b2030b546854f78416d653163f0ce9290cf2278e8b",
-    )
-    native.http_file(
-        name="pypi_pytz",
-        url="https://pypi.python.org/packages/a3/7f/e7d1acbd433b929168a4fb4182a2ff3c33653717195a26c1de099ad1ef29/pytz-2017.3-py2.py3-none-any.whl",
-        sha256="c41c62827ce9cafacd6f2f7018e4f83a6f1986e87bfd000b8cfbd4ab5da95f1a",
-    )
-    native.http_file(
-        name="pypi_requests",
-        url="https://pypi.python.org/packages/49/df/50aa1999ab9bde74656c2919d9c0c085fd2b3775fd3eca826012bef76d8c/requests-2.18.4-py2.py3-none-any.whl",
-        sha256="6a1b267aa90cac58ac3a765d067950e7dbbf75b1da07e895d1f594193a40a38b",
-    )
-    native.http_file(
-        name="pypi_rsa",
-        url="https://pypi.python.org/packages/e1/ae/baedc9cb175552e95f3395c43055a6a5e125ae4d48a1d7a924baca83e92e/rsa-3.4.2-py2.py3-none-any.whl",
-        sha256="43f682fea81c452c98d09fc316aae12de6d30c4b5c84226642cf8f8fd1c93abd",
-    )
-    native.http_file(
-        name="pypi_setuptools",
-        url="https://pypi.python.org/packages/75/d1/5abca4ccf61a7ab86c255dd315fb96e566fbf9b5d3a480e72c93e8ec2802/setuptools-38.4.0-py2.py3-none-any.whl",
-        sha256="155c2ec9fdcc00c3973d966b416e1cf3a1e7ce75f4c09fb760b23f94b935926e",
-    )
-    native.http_file(
-        name="pypi_six",
-        url="https://pypi.python.org/packages/67/4b/141a581104b1f6397bfa78ac9d43d8ad29a7ca43ea90a2d863fe3056e86a/six-1.11.0-py2.py3-none-any.whl",
-        sha256="832dc0e10feb1aa2c68dcc57dbb658f1c7e65b9b61af69048abc87a2db00a0eb",
-    )
-    native.http_file(
-        name="pypi_urllib3",
-        url="https://pypi.python.org/packages/63/cb/6965947c13a94236f6d4b8223e21beb4d576dc72e8130bd7880f600839b8/urllib3-1.22-py2.py3-none-any.whl",
-        sha256="06330f386d6e4b195fbfc736b297f58c5a892e4440e54d294d7004e3a9bbea1b",
-    )
 
 def pypi_libraries():
     pyz_library(
@@ -136,6 +19,7 @@ def pypi_libraries():
     pyz_library(
         name="certifi",
         wheels=["@pypi_certifi//file"],
+        zip_safe=False,
         deps=[
         ],
         licenses=["notice"],
@@ -169,14 +53,14 @@ def pypi_libraries():
         name="google_api_core",
         wheels=["@pypi_google_api_core//file"],
         deps=[
-            "google_auth",
+            "futures",
             "googleapis_common_protos",
             "protobuf",
-            "pytz",
+            "google_auth",
             "requests",
             "setuptools",
             "six",
-            "futures",
+            "pytz",
         ],
         licenses=["notice"],
         visibility=["//visibility:public"],
@@ -206,11 +90,9 @@ def pypi_libraries():
         name="google_cloud_bigquery",
         wheels=["@pypi_google_cloud_bigquery//file"],
         deps=[
-            "google_api_core",
-            "google_auth",
             "google_cloud_core",
+            "google_api_core",
             "google_resumable_media",
-            "requests",
         ],
         licenses=["notice"],
         visibility=["//visibility:public"],
@@ -237,11 +119,9 @@ def pypi_libraries():
         name="google_cloud_storage",
         wheels=["@pypi_google_cloud_storage//file"],
         deps=[
-            "google_api_core",
-            "google_auth",
             "google_cloud_core",
+            "google_api_core",
             "google_resumable_media",
-            "requests",
         ],
         licenses=["notice"],
         visibility=["//visibility:public"],
@@ -285,13 +165,12 @@ def pypi_libraries():
     pyz_library(
         name="grpcio",
         wheels=select({
-                "@com_bluecore_rules_pyz//rules_python_zip:linux": ["@pypi_grpcio__linux//file"],
                 "@com_bluecore_rules_pyz//rules_python_zip:osx": ["@pypi_grpcio__osx//file"],
+                "@com_bluecore_rules_pyz//rules_python_zip:linux": ["@pypi_grpcio__linux//file"],
         }),
         deps=[
             "enum34",
             "futures",
-            "protobuf",
             "six",
         ],
         licenses=["notice"],
@@ -307,7 +186,10 @@ def pypi_libraries():
     )
     pyz_library(
         name="protobuf",
-        wheels=["@pypi_protobuf//file"],
+        wheels=select({
+                "@com_bluecore_rules_pyz//rules_python_zip:osx": ["@pypi_protobuf__osx//file"],
+                "@com_bluecore_rules_pyz//rules_python_zip:linux": ["@pypi_protobuf__linux//file"],
+        }),
         deps=[
             "setuptools",
             "six",
@@ -402,3 +284,155 @@ def pypi_libraries():
         licenses=["notice"],
         visibility=["//visibility:public"],
     )
+def pypi_repositories():
+    existing_rules = native.existing_rules()
+    if "pypi_cachetools" not in existing_rules:
+        native.http_file(
+            name="pypi_cachetools",
+            url="https://files.pythonhosted.org/packages/0a/58/cbee863250b31d80f47401d04f34038db6766f95dea1cc909ea099c7e571/cachetools-2.1.0-py2.py3-none-any.whl",
+            sha256="d1c398969c478d336f767ba02040fa22617333293fb0b8968e79b16028dfee35",
+        )
+    if "pypi_certifi" not in existing_rules:
+        native.http_file(
+            name="pypi_certifi",
+            url="https://files.pythonhosted.org/packages/7c/e6/92ad559b7192d846975fc916b65f667c7b8c3a32bea7372340bfe9a15fa5/certifi-2018.4.16-py2.py3-none-any.whl",
+            sha256="9fa520c1bacfb634fa7af20a76bcbd3d5fb390481724c597da32c719a7dca4b0",
+        )
+    if "pypi_chardet" not in existing_rules:
+        native.http_file(
+            name="pypi_chardet",
+            url="https://files.pythonhosted.org/packages/bc/a9/01ffebfb562e4274b6487b4bb1ddec7ca55ec7510b22e4c51f14098443b8/chardet-3.0.4-py2.py3-none-any.whl",
+            sha256="fc323ffcaeaed0e0a02bf4d117757b98aed530d9ed4531e3e15460124c106691",
+        )
+    if "pypi_enum34" not in existing_rules:
+        native.http_file(
+            name="pypi_enum34",
+            url="https://files.pythonhosted.org/packages/c5/db/e56e6b4bbac7c4a06de1c50de6fe1ef3810018ae11732a50f15f62c7d050/enum34-1.1.6-py2-none-any.whl",
+            sha256="6bd0f6ad48ec2aa117d3d141940d484deccda84d4fcd884f5c3d93c23ecd8c79",
+        )
+    if "pypi_futures" not in existing_rules:
+        native.http_file(
+            name="pypi_futures",
+            url="https://files.pythonhosted.org/packages/2d/99/b2c4e9d5a30f6471e410a146232b4118e697fa3ffc06d6a65efde84debd0/futures-3.2.0-py2-none-any.whl",
+            sha256="ec0a6cb848cc212002b9828c3e34c675e0c9ff6741dc445cab6fdd4e1085d1f1",
+        )
+    if "pypi_google_api_core" not in existing_rules:
+        native.http_file(
+            name="pypi_google_api_core",
+            url="https://files.pythonhosted.org/packages/76/30/c893dfc10b118f9b6720d71baf933bd10fd062ee645313c70b28c9e98659/google_api_core-1.1.2-py2.py3-none-any.whl",
+            sha256="53e9366ccdb942bcf48e6e8b237d46508dd9dac4c77f35f580140ea83d1a092e",
+        )
+    if "pypi_google_auth" not in existing_rules:
+        native.http_file(
+            name="pypi_google_auth",
+            url="https://files.pythonhosted.org/packages/e0/18/e282ecb28c7eb0ef5ea9a69fb3290658a9ab37bb69647f6ba7f0f78987c4/google_auth-1.4.1-py2.py3-none-any.whl",
+            sha256="34088434cb2a2409360b8f3cbc04195a465df1fb2aafad71ebbded77cbf08803",
+        )
+    if "pypi_google_cloud_bigquery" not in existing_rules:
+        native.http_file(
+            name="pypi_google_cloud_bigquery",
+            url="https://files.pythonhosted.org/packages/4d/7e/d47392a7449411b7e4f8c95a32c29f5c9808fa7a7111ab302fec773fa86d/google_cloud_bigquery-1.1.0-py2.py3-none-any.whl",
+            sha256="44d152e1de60cce8fe9d4f5c60ca4cebc88daab02b4d889bb0ebfcc19d54d7ec",
+        )
+    if "pypi_google_cloud_core" not in existing_rules:
+        native.http_file(
+            name="pypi_google_cloud_core",
+            url="https://files.pythonhosted.org/packages/0f/41/ae2418b4003a14cf21c1c46d61d1b044bf02cf0f8f91598af572b9216515/google_cloud_core-0.28.1-py2.py3-none-any.whl",
+            sha256="0090df83dbc5cb2405fa90844366d13176d1c0b48181c1807ab15f53be403f73",
+        )
+    if "pypi_google_cloud_storage" not in existing_rules:
+        native.http_file(
+            name="pypi_google_cloud_storage",
+            url="https://files.pythonhosted.org/packages/d4/1a/8238dda1547b9b6156f4cfc7923558bb67d6c608a28d677d0dc070babd31/google_cloud_storage-1.10.0-py2.py3-none-any.whl",
+            sha256="6e53ee063e5075dc69322162fdf7e1b2a51eac82ec0449293e471fa8f36cdeba",
+        )
+    if "pypi_google_resumable_media" not in existing_rules:
+        native.http_file(
+            name="pypi_google_resumable_media",
+            url="https://files.pythonhosted.org/packages/77/95/2e4020a54366423ddba715f89fb7ca456c8f048b15cada6cd6a54cf10e8c/google_resumable_media-0.3.1-py2.py3-none-any.whl",
+            sha256="116de90b9cd483b17c53618ee6a5a20f33e741c648140c8cc9c2141e07616ff1",
+        )
+    if "pypi_googleapis_common_protos" not in existing_rules:
+        native.http_file(
+            name="pypi_googleapis_common_protos",
+            url="https://storage.googleapis.com/bluecore-bazel/googleapis_common_protos-1.5.3-py2-none-any.whl",
+            sha256="688b20bc1a70a6ae3178ee296adb8bb0d04f64e2734c528b302c7024bf2abb7d",
+        )
+    if "pypi_grpcio__linux" not in existing_rules:
+        native.http_file(
+            name="pypi_grpcio__linux",
+            url="https://files.pythonhosted.org/packages/2a/d5/eb371e43d65989267a9daa90ee8f92d79b216184ea3c8cf0670e5c2388eb/grpcio-1.12.0-cp27-cp27mu-manylinux1_x86_64.whl",
+            sha256="fd5409f797a01d82e80800d078b6ee43ddae43cf93ad2b30d601e471f08bec96",
+        )
+    if "pypi_grpcio__osx" not in existing_rules:
+        native.http_file(
+            name="pypi_grpcio__osx",
+            url="https://files.pythonhosted.org/packages/0a/9d/aa4dd93ae061526e5ba6b8e9f6e11095ed9df70fdf0a3ad9288a600a76c1/grpcio-1.12.0-cp27-cp27m-macosx_10_12_x86_64.whl",
+            sha256="e87393c34532636741e06f39d01ef1df0c7ca751b4aa15d6ac8fb6482484de9f",
+        )
+    if "pypi_idna" not in existing_rules:
+        native.http_file(
+            name="pypi_idna",
+            url="https://files.pythonhosted.org/packages/27/cc/6dd9a3869f15c2edfab863b992838277279ce92663d334df9ecf5106f5c6/idna-2.6-py2.py3-none-any.whl",
+            sha256="8c7309c718f94b3a625cb648ace320157ad16ff131ae0af362c9f21b80ef6ec4",
+        )
+    if "pypi_protobuf__linux" not in existing_rules:
+        native.http_file(
+            name="pypi_protobuf__linux",
+            url="https://files.pythonhosted.org/packages/9d/61/54c3a9cfde6ffe0ca6a1786ddb8874263f4ca32e7693ad383bd8cf935015/protobuf-3.5.2.post1-cp27-cp27mu-manylinux1_x86_64.whl",
+            sha256="5c1c8f6a0a68a874e3beff89255959dd80fad45870e96c88944a1b81a22dd5f5",
+        )
+    if "pypi_protobuf__osx" not in existing_rules:
+        native.http_file(
+            name="pypi_protobuf__osx",
+            url="https://files.pythonhosted.org/packages/c7/15/e21b9597043ecdc586b76b29608b30212658d239d66407621a642aedb41f/protobuf-3.5.2.post1-cp27-cp27m-macosx_10_6_intel.macosx_10_9_intel.macosx_10_9_x86_64.macosx_10_10_intel.macosx_10_10_x86_64.whl",
+            sha256="ac0067e3c60737865ed72bb7416e02297d229d960902802d874c0e167128c809",
+        )
+    if "pypi_pyasn1" not in existing_rules:
+        native.http_file(
+            name="pypi_pyasn1",
+            url="https://files.pythonhosted.org/packages/ba/fe/02e3e2ee243966b143657fb8bd6bc97595841163b6d8c26820944acaec4d/pyasn1-0.4.2-py2.py3-none-any.whl",
+            sha256="d5cd6ed995dba16fad0c521cfe31cd2d68400b53fcc2bce93326829be73ab6d1",
+        )
+    if "pypi_pyasn1_modules" not in existing_rules:
+        native.http_file(
+            name="pypi_pyasn1_modules",
+            url="https://files.pythonhosted.org/packages/e9/51/bcd96bf6231d4b2cc5e023c511bee86637ba375c44a6f9d1b4b7ad1ce4b9/pyasn1_modules-0.2.1-py2.py3-none-any.whl",
+            sha256="47fb6757ab78fe966e7c58b2030b546854f78416d653163f0ce9290cf2278e8b",
+        )
+    if "pypi_pytz" not in existing_rules:
+        native.http_file(
+            name="pypi_pytz",
+            url="https://files.pythonhosted.org/packages/dc/83/15f7833b70d3e067ca91467ca245bae0f6fe56ddc7451aa0dc5606b120f2/pytz-2018.4-py2.py3-none-any.whl",
+            sha256="65ae0c8101309c45772196b21b74c46b2e5d11b6275c45d251b150d5da334555",
+        )
+    if "pypi_requests" not in existing_rules:
+        native.http_file(
+            name="pypi_requests",
+            url="https://files.pythonhosted.org/packages/49/df/50aa1999ab9bde74656c2919d9c0c085fd2b3775fd3eca826012bef76d8c/requests-2.18.4-py2.py3-none-any.whl",
+            sha256="6a1b267aa90cac58ac3a765d067950e7dbbf75b1da07e895d1f594193a40a38b",
+        )
+    if "pypi_rsa" not in existing_rules:
+        native.http_file(
+            name="pypi_rsa",
+            url="https://files.pythonhosted.org/packages/e1/ae/baedc9cb175552e95f3395c43055a6a5e125ae4d48a1d7a924baca83e92e/rsa-3.4.2-py2.py3-none-any.whl",
+            sha256="43f682fea81c452c98d09fc316aae12de6d30c4b5c84226642cf8f8fd1c93abd",
+        )
+    if "pypi_setuptools" not in existing_rules:
+        native.http_file(
+            name="pypi_setuptools",
+            url="https://files.pythonhosted.org/packages/7f/e1/820d941153923aac1d49d7fc37e17b6e73bfbd2904959fffbad77900cf92/setuptools-39.2.0-py2.py3-none-any.whl",
+            sha256="8fca9275c89964f13da985c3656cb00ba029d7f3916b37990927ffdf264e7926",
+        )
+    if "pypi_six" not in existing_rules:
+        native.http_file(
+            name="pypi_six",
+            url="https://files.pythonhosted.org/packages/67/4b/141a581104b1f6397bfa78ac9d43d8ad29a7ca43ea90a2d863fe3056e86a/six-1.11.0-py2.py3-none-any.whl",
+            sha256="832dc0e10feb1aa2c68dcc57dbb658f1c7e65b9b61af69048abc87a2db00a0eb",
+        )
+    if "pypi_urllib3" not in existing_rules:
+        native.http_file(
+            name="pypi_urllib3",
+            url="https://files.pythonhosted.org/packages/63/cb/6965947c13a94236f6d4b8223e21beb4d576dc72e8130bd7880f600839b8/urllib3-1.22-py2.py3-none-any.whl",
+            sha256="06330f386d6e4b195fbfc736b297f58c5a892e4440e54d294d7004e3a9bbea1b",
+        )

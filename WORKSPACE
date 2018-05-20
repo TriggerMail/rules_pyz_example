@@ -1,7 +1,7 @@
 # Dependencies required for rules_pyz
 git_repository(
     name = "com_bluecore_rules_pyz",
-    commit = "b65da7c4cd2d845e216539c12ea586bdb9f30820",
+    commit = "f646a841eed561a692be1f0e23ad1ec2697f348d",
     remote = "https://github.com/TriggerMail/rules_pyz.git",
 )
 

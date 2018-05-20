@@ -23,6 +23,7 @@ pyz_binary(
     ],
     deps = [
         "//third_party/pypi:grpcio",
+        "//third_party/pypi:protobuf",
     ],
 )
 
@@ -35,6 +36,7 @@ pyz_binary(
     ],
     deps = [
         "//third_party/pypi:grpcio",
+        "//third_party/pypi:protobuf",
     ],
 )
 
